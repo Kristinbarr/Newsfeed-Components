@@ -1,4 +1,5 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
+import $ from 'jquery'
 
 let menuItems = [
   'Students',
