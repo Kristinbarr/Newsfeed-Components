@@ -1,5 +1,4 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
-import $ from 'jquery'
 
 let menuItems = [
   'Students',
@@ -35,31 +34,32 @@ let menuItems = [
 
 */
 
-const header = document.querySelector('.header')
-
-header.appendChild(createMenuList(menuItems))
-
 function createMenuList(menuItems) {
-
+  
   const menu = document.createElement('div')
-  const list = document.createElement('ul')
-
-  menu.appendChild(list)
+  const ul = document.createElement('ul')
 
   menu.classList.add('menu')
-
-  menuItems.forEach(menuItem => {
-    const listItem = document.createElement('li')
-    list.appendChild(listItem)
-    listItem.textContent = menuItem
+  menu.appendChild(ul)
+  
+  menuItems.forEach(item => {
+    const li = document.createElement('li')
+    li.textContent = item
+    ul.appendChild(listItem)
   })
+  
+  let menuButton = document.querySelector('.menu-button');
 
-  header.addEventListener('click', event => {
+  menuButton.addEventListener('click', () => {
     menu.classList.toggle('menu--open')
   })
-
+  
   return menu
 }
+
+const header = document.querySelector('.header')
+header.appendChild(createMenuList(menuItems))
+
 
 
 
